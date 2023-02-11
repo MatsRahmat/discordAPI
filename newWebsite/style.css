@@ -1,0 +1,195 @@
+body{
+    box-sizing: border-box;
+}
+.text-header{
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    padding: 3em 0;
+    font-size: 50px;
+    transition: 300ms;
+}
+.container h1{
+    text-align: center;
+    border-bottom: 1px solid black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.card{
+    width: 15em;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 12px;
+    background-image: linear-gradient(#4d79ff, #0033cc);
+    margin: 10px auto;
+}
+.card img{
+    margin: 14px;
+    padding:px ;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    box-shadow: 0 10px 10px 1px #222;
+}
+.card img:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 5px 1px #222;
+}
+.card h2{
+    text-align: center;
+    font-size: 30px;
+    height: 70px;
+}
+.card button{
+    font-size: 30px;
+    stroke: none;
+    margin-bottom: 5px;
+
+}
+
+#content{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+footer{
+    width: 100%;
+    height: 20em;
+    background-color: #000;
+}
+footer h2{
+    color: wheat;
+    text-align: center;
+    
+}
+.kiri-kanan{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+.kiri-kanan .kiri{
+    border: 1px solid white;
+    width: 40%;
+    left: 0;
+    bottom: 0;
+    text-align: right;
+    margin: 4px;
+}
+.kiri-kanan .kanan{
+    border: 1px solid white;
+    width: 40%;
+    right: 0;
+    bottom: 0;
+    text-align: left;
+    margin: 4px;
+}
+
+.kiri, .kanan p{
+    color: white;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.modal{
+    position: fixed;
+    width: 613px;
+    max-width: 80%;
+    border: 1px solid black;
+    z-index: 10;
+    left: 50%;
+    /* top: 50%; */
+    background-color: white;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    border-radius: 12px;
+    transition: 100ms;
+}
+.modal-header{
+    height: 50px;
+    border-bottom: 1px solid black ;
+}
+
+.modal-body{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 5px;
+    gap: 8px;
+}
+
+.modal-body img{
+    width:280px;
+    height: 280px;
+}
+.avatar-img{
+    height: 280px;
+}
+/* @media screen and (width <= 770px ) {
+    .avatar-img{
+        margin: 5px auto;
+        width: 390px;
+        display: flex;
+        justify-content: center;
+    }
+    .modal-body img{
+        transform: scale(0.8);
+    }
+} */
+
+/* @media screen and (width < 380px){
+    .avatar-img{
+        margin: 5px auto;
+        width: 170px;
+        height: 170px;
+        display: flex;
+        justify-content: center;
+    }
+    .avatar-img img{
+        transform: scale(0.6);
+        margin-top: 0;
+    } */
+/* } */
+
+/* @media screen and (width >= 1440){
+    .modal{
+        transform: scale(6);
+    }
+} */
+.details{
+    width: 280px;
+}
+
+.active-modal {
+    top:50%;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.active-overlay{
+    opacity: 1 !important;
+    pointer-events: all;
+}
+
+.modal-bottom{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+}
+button[onclick="closeModal()"]{
+    font-size: 20px;
+    margin-top: 5px;
+}
