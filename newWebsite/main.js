@@ -69,3 +69,7 @@ function showDetails(index){
         `
     })
 }
+
+const date = new Date;
+const tahun = date.getFullYear();
+document.querySelector('.copy-right').innerHTML = 'CopyRight: ' + tahun

@@ -73,7 +73,7 @@ footer h2{
     justify-content: center;
 }
 .kiri-kanan .kiri{
-    border: 1px solid white;
+    /* border: 1px solid white; */
     width: 40%;
     left: 0;
     bottom: 0;
@@ -81,7 +81,7 @@ footer h2{
     margin: 4px;
 }
 .kiri-kanan .kanan{
-    border: 1px solid white;
+    /* border: 1px solid white; */
     width: 40%;
     right: 0;
     bottom: 0;
@@ -92,7 +92,7 @@ footer h2{
 .kiri, .kanan p{
     color: white;
     font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Courier New', Courier, monospace;
 }
 
 
