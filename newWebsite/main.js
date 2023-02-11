@@ -3,13 +3,14 @@ const outSpan = document.getElementById('member');
 function getAPI(){
     fetch('https://discordapp.com/api/guilds/657476002502541323/widget.json')
     .then(ress => ress.json())
-    .then(obj =>{ 
+    .then(obj =>{
+        console.log(obj.members); 
         obj.members.forEach((m, i)=> {
             content.innerHTML += `
             <div class="card">
             <img src="${m.avatar_url}" />
             <h2>${m.username}</h2>
-            <button open-detail>Details</button>
+            <button onclick="showDetails(${i})">Details</button>
             </div>
             `
         })
@@ -45,8 +46,26 @@ function closeModal(){
     modalBody.classList.remove('active-modal')
     overlayModal.classList.remove('active-overlay')
 }
-// function showDetails(username){
-//     openModal()
-//     modalHeaderText.innerHTML = username;
-
-// }
+function showDetails(index){
+    openModal()
+    fetch('https://discordapp.com/api/guilds/657476002502541323/widget.json')
+    .then(ress => ress.json())
+    .then(obj => {
+        const member = obj.members;
+        modalBody.innerHTML = `
+        <div class="modal-header"><span detail-username>Details dari ${member[index].username}</span></div>
+        <div class="modal-body">
+            <div class="avatar-img">
+                <img src="${member[index].avatar_url}" />
+            </div>
+            <div class="details">
+                <h2>Username: ${member[index].username}</h2>
+                <p class="status">Status: Sedang Memikirkan kamu</p>
+            </div>
+        </div>
+        <div class="modal-bottom">
+            <button onclick="closeModal()">Tutup</button>
+        </div>
+        `
+    })
+}
