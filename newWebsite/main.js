@@ -5,15 +5,15 @@ function getAPI(){
     .then(ress => ress.json())
     .then(obj =>{ 
         obj.members.forEach((m, i)=> {
-            outSpan.innerHTML = obj.members.length;
             content.innerHTML += `
             <div class="card">
             <img src="${m.avatar_url}" />
             <h2>${m.username}</h2>
-            <button onclick="openModal()">Details</button>
-        </div>
+            <button open-detail>Details</button>
+            </div>
             `
         })
+        outSpan.innerHTML = obj.members.length;
     })
 }
 getAPI()
@@ -25,7 +25,15 @@ function tes(a){
 const overlayModal = document.querySelector('.overlay');
 const modalBody = document.querySelector('.modal');
 const closeModalBtn = document.getElementById('close-modal')
-const modalHeaderText = document.querySelector('.modal-header');
+const modalHeaderText = document.querySelector('[detail-username]');
+const detailBtn = document.querySelectorAll('button[open-detail]')
+console.log(detailBtn);
+
+detailBtn.forEach(btn =>{
+    btn.addEventListener('click', function(){
+        console.log('ada');
+    })
+})
 
 function openModal(){
     console.log('ter tekan buka');
@@ -37,3 +45,8 @@ function closeModal(){
     modalBody.classList.remove('active-modal')
     overlayModal.classList.remove('active-overlay')
 }
+// function showDetails(username){
+//     openModal()
+//     modalHeaderText.innerHTML = username;
+
+// }
