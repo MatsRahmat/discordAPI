@@ -138,8 +138,29 @@ header {
     display: grid;
     place-items: center;
 }
-.header-- {
+.header--, .slide-- {
     font-family:var(--font-dua);
+    text-align: center;
+}
+
+@keyframes slideDown {
+    0% {transform: translateY(-3em); opacity: 0%;}
+    100% { transform: translateY(0); opacity: 100%;}
+}
+@keyframes slide {
+    0% { transform: translateX(3em); opacity: 0;}
+    50% { transform: translateX(0); opacity: 100%;}
+    100% { transform: translateX(-3em); opacity: 0%;}
+
+}
+.header--{
+    animation: slideDown 1s ease-out ;
+    transition: slide 1s ease-in;
+}
+.slide-- {
+    font-size: larger;
+    animation: slide 2.5s infinite;
+    transition-timing-function: 2.1s cubic-bezier(0,.44,.98,.45);
 }
 .tabel__content {
     margin-inline: auto;
@@ -177,7 +198,7 @@ h2 {
     transition: .3s ease-out;
     z-index: 10;
 }
-.modal > img {
+.modal >a> img {
     width: 200px;
     aspect-ratio: 1/1 ;
 }

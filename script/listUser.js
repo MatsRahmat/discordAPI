@@ -35,7 +35,7 @@ function renderTable() {
 const alertBox = document.getElementById('alertMsg');
 function openDialog([avatarlink, username, status]) {
     modal.innerHTML = `
-    <img src="${avatarlink}">
+    <img src="${avatarlink}"/>
     <h2>${username}</h2>
     <p>${status}</p>
     <button data-button-close>close</button>
@@ -46,7 +46,6 @@ function openDialog([avatarlink, username, status]) {
         overlay.classList.toggle('active-overlay')
 
     })
-    console.log(modal);
 }
 
 window.onload = function() {
